@@ -4,6 +4,7 @@
  * 
  * @copyright Copyright 2019 Eric C. Weig 
  * @license http://opensource.org/licenses/MIT MIT
+ * some of the code for this plugin was based on https://github.com/adehner/CSVExport/ by Anneliese Dehne
  */
 /**
  * The METSExport plugin.
