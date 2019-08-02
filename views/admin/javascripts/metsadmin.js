@@ -6,6 +6,7 @@ jQuery(window).load(function(){
 jQuery('label:contains("Collection")').html('Set')
 jQuery('h4:contains("Collection")').html('Set')
 jQuery('a:contains("Collections")').html('Sets')
+jQuery('option:contains("Select Collection")').html('Select Set')
 jQuery('a:contains("Add a Collection")').html('Add a Set')
 jQuery('p:contains("All items are in a collection.")').html('All items are in a set.')
 jQuery('p:contains("Get started by adding your first collection.")').html('Get started by adding your first set.')
@@ -24,4 +25,10 @@ jQuery('#content-heading').contents().filter(function() {
 }).each(function(){
     this.textContent = this.textContent.replace('Browse Collections','Browse Set');
 });    
+jQuery('#content-heading').contents().filter(function() {
+    return this.nodeType == 3
+}).each(function(){
+    this.textContent = this.textContent.replace('Collection #','Set #');
+});  
 });
+
