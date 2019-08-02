@@ -56,7 +56,7 @@ class METSExportPlugin extends Omeka_Plugin_AbstractPlugin
     $collection = get_collection_for_item();
     $collectionId = metadata($collection, 'id');
 
-    echo "<div class=\"panel\"><h4>Export METS XML</h4><p><a class='button blue' style='width:100%;' href='" . url('mets-export/export/mets?search=&advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=&advanced%5B0%5D%5Btype%5D=&advanced%5B0%5D%5Bterms%5D=&range=' . $itemId . '&collection=&type=&user=&tags=&public=&featured=&submit_search=Search+for+items&hits=0') . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export Item as METS XML' /></a></p><p><a class='button blue' style='width:100%;' href='" . url('mets-export/export/mets?search=&advanced%5B0%5D%5Bjoiner%5D=and&range=&collection=' . $collectionId . '&type=&user=&tags=&public=&featured=&submit_search=Search+for+items&hits=0') . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export Collection as METS XML' /></a></p></div>";  
+    echo "<div class=\"panel\"><h4>Export METS XML</h4><p><a class='button blue' style='width:100%;' href='" . url('mets-export/export/mets?search=&advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=&advanced%5B0%5D%5Btype%5D=&advanced%5B0%5D%5Bterms%5D=&range=' . $itemId . '&collection=&type=&user=&tags=&public=&featured=&submit_search=Search+for+items&hits=0') . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export Item as METS XML' /></a></p><p><a class='button blue' style='width:100%;' href='" . url('mets-export/export/mets?search=&advanced%5B0%5D%5Bjoiner%5D=and&range=&collection=' . $collectionId . '&type=&user=&tags=&public=&featured=&submit_search=Search+for+items&hits=0') . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export Set as METS XML' /></a></p></div>";  
     } else {
     echo "<div class=\"panel\"><h4>Export METS XML</h4><p><a class='button blue' style='width:100%;' href='" . url('mets-export/export/mets?search=&advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=&advanced%5B0%5D%5Btype%5D=&advanced%5B0%5D%5Bterms%5D=&range=' . $itemId . '&collection=&type=&user=&tags=&public=&featured=&submit_search=Search+for+items&hits=0') . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export Item as METS XML' /></a></p>";
     }
@@ -69,9 +69,10 @@ class METSExportPlugin extends Omeka_Plugin_AbstractPlugin
   {
     $collectionRec = get_current_record('collection');
     $collectionID = $collectionRec->id;
-    echo "<div class=\"panel\"><h4>Export METS XML</h4><p><a class='button blue' style='width:100%;' href='" . url('mets-export/export/mets?search=&advanced%5B0%5D%5Bjoiner%5D=and&range=&collection=' . $collectionID . '&type=&user=&tags=&public=&featured=&submit_search=Search+for+items&hits=0') . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export Collection as METS XML' /></a></p></div>";
+    echo "<div class=\"panel\"><h4>Export METS XML</h4><p><a class='button blue' style='width:100%;' href='" . url('mets-export/export/mets?search=&advanced%5B0%5D%5Bjoiner%5D=and&range=&collection=' . $collectionID . '&type=&user=&tags=&public=&featured=&submit_search=Search+for+items&hits=0') . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export Set as METS XML' /></a></p></div>";
   }
   
 }
 
 ?>
+
