@@ -1,7 +1,7 @@
 <?php 
 
 // handle fields that need to deal with multiple values separated by ';'
-// Dublin Core:Creator, Dublin Core:Date, Dublin Core:Description, Dublin Core:Coverage, Dublin Core:Format, Dublin Core:Language, Dublin Core:Publisher, Dublin Core:Subject
+// Dublin Core:Creator, Dublin Core:Date, Dublin Core:Description, Dublin Core:Coverage, Dublin Core:Format, Dublin Core: Type, Dublin Core:Language, Dublin Core:Publisher, Dublin Core:Subject
 
 $dccreator = metadata($item, array("Dublin Core", "Creator"));
 $dccreator = str_replace(";","^^",$dccreator);
@@ -32,6 +32,12 @@ $dcformat = str_replace(";","^^",$dcformat);
 $dcformat = htmlspecialchars($dcformat, ENT_QUOTES);
 $rdcformat = str_replace("^^","</dc:format>\n <dc:format>",$dcformat);
 $rdcformat = str_replace("> ",">",$rdcformat);
+
+$dctype = metadata($item, array("Dublin Core", "Type"));
+$dctype = str_replace(";","^^",$dctype);
+$dctype = htmlspecialchars($dctype, ENT_QUOTES);
+$rdctype = str_replace("^^","</dc:format>\n <dc:format>",$dctype);
+$rdctype = str_replace("> ",">",$rdctype);
 
 $dclanguage = metadata($item, array("Dublin Core", "Language"));
 $dclanguage = str_replace(";","^^",$dclanguage);
@@ -66,19 +72,15 @@ $sdcidentifier = htmlspecialchars($sdcidentifier, ENT_QUOTES);
 $sdcsource = metadata($item, array("Dublin Core", "Source"));
 $sdcsource = htmlspecialchars($sdcsource, ENT_QUOTES);
 
-$sdctype = metadata($item, array("Dublin Core", "Type"));
-$sdctype = htmlspecialchars($sdctype, ENT_QUOTES);
-
 $sdcrights = metadata($item, array("Dublin Core", "Rights"));
 $sdcrights = htmlspecialchars($sdcrights, ENT_QUOTES);
 
 $sdcrelation = metadata($item, array("Dublin Core", "Relation"));
 $sdcrelation = htmlspecialchars($sdcrelation, ENT_QUOTES);
 
-$result[$id]['mets'] = $tag00 . $tag01 . $tag02 . $tag03 . $tag04 . $tag05 . $tag06 . $tag07 . $tag08 . $tag09 . $tag10 . $tag11 . $tag12 . $tag13 . $tag14 . $tag15 . $tag16 . $tag17 . $tag18 . $tag19 . $tag20 . $tag21 . $sdctitle . $tag22 . $tag23 . $rdccreator . $tag24 . $tag25 . $rdcdate . $tag26 . $tag27 . $rdcdescription . $tag28 . $tag29 . $rdccoverage . $tag30 . $tag31 . $rdcformat . $tag32 . $tag33 . $sdcidentifier . $tag34 . $tag35 . $rdcpublisher . $tag36 . $tag37 . $rdcsubject . $tag38 . $tag39 . $rdclanguage . $tag40 . $tag41 . $sdcsource . $tag42 . $tag43 . $rdccontributor . $tag44 . $tag45 . $sdctype . $tag46 . $tag47 . $sdcrights . $tag48 . $tag49 . $sdcrelation . $tag50 . $tag51 . $tag52 . $tag53 . $tag54 . $tag55 . $tag56 . $tag57 . $tag58 . $tag59 . $tag60 . $tag61 . $tag62 . $tag63 . $tag64 . $tag65 . $tag66 . $tag67 . $tag68 . $tag69 . $tag70 . $tag71 . $tag72 . $tag73 . $tag74 . $tag75 . $tag76 . $tag77 . $tag78;
+$result[$id]['mets'] = $tag00 . $tag01 . $tag02 . $tag03 . $tag04 . $tag05 . $tag06 . $tag07 . $tag08 . $tag09 . $tag10 . $tag11 . $tag12 . $tag13 . $tag14 . $tag15 . $tag16 . $tag17 . $tag18 . $tag19 . $tag20 . $tag21 . $sdctitle . $tag22 . $tag23 . $rdccreator . $tag24 . $tag25 . $rdcdate . $tag26 . $tag27 . $rdcdescription . $tag28 . $tag29 . $rdccoverage . $tag30 . $tag31 . $rdcformat . $tag32 . $tag33 . $sdcidentifier . $tag34 . $tag35 . $rdcpublisher . $tag36 . $tag37 . $rdcsubject . $tag38 . $tag39 . $rdclanguage . $tag40 . $tag41 . $sdcsource . $tag42 . $tag43 . $rdccontributor . $tag44 . $tag45 . $rdctype . $tag46 . $tag47 . $sdcrights . $tag48 . $tag49 . $sdcrelation . $tag50 . $tag51 . $tag52 . $tag53 . $tag54 . $tag55 . $tag56 . $tag57 . $tag58 . $tag59 . $tag60 . $tag61 . $tag62 . $tag63 . $tag64 . $tag65 . $tag66 . $tag67 . $tag68 . $tag69 . $tag70 . $tag71 . $tag72 . $tag73 . $tag74 . $tag75 . $tag76 . $tag77 . $tag78;
 
     $result[$id]['mets'] = str_replace("  "," ",$result[$id]['mets']);
     $result[$id]['mets'] = str_replace(" </dc:","</dc:",$result[$id]['mets']);
 
 ?>
-
