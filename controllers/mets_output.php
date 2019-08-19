@@ -36,7 +36,7 @@ $rdcformat = str_replace("> ",">",$rdcformat);
 $dctype = metadata($item, array("Dublin Core", "Type"));
 $dctype = str_replace(";","^^",$dctype);
 $dctype = htmlspecialchars($dctype, ENT_QUOTES);
-$rdctype = str_replace("^^","</dc:format>\n <dc:format>",$dctype);
+$rdctype = str_replace("^^","</dc:type>\n <dc:type>",$dctype);
 $rdctype = str_replace("> ",">",$rdctype);
 
 $dclanguage = metadata($item, array("Dublin Core", "Language"));
