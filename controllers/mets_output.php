@@ -48,7 +48,7 @@ $rdclanguagen = str_replace("> ",">",$rdclanguage);
 $dcpublisher = metadata($item, array("Dublin Core", "Publisher"));
 $dcpublisher = str_replace(";","^^",$dcpublisher);
 $dcpublisher = htmlspecialchars($dcpublisher, ENT_QUOTES);
-$rdcpublisher = str_replace("^^","</dc:publsher>\n <dc:publisher>",$dcpublisher);
+$rdcpublisher = str_replace("^^","</dc:publisher>\n <dc:publisher>",$dcpublisher);
 $rdcpublisher = str_replace("> ",">",$rdcpublisher);
 
 $dcsubject = metadata($item, array("Dublin Core", "Subject"));
